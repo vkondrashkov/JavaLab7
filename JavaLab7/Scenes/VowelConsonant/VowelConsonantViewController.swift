@@ -16,6 +16,7 @@ class VowelConsonantViewController: UIViewController, VowelConsonantView {
     private var vowelConsonantView = UIView()
     private var containerView = UIView()
     private var textField = UITextField()
+    private var resultLabel = UILabel()
     private var submitButton = UIButton()
     
     var presenter: VowelConsonantPresenter!
@@ -38,12 +39,19 @@ class VowelConsonantViewController: UIViewController, VowelConsonantView {
         containerView.addSubview(textField)
         activateTextFieldConstraints(view: textField)
         
+        resultLabel.text = "Result: --"
+        resultLabel.font = .boldSystemFont(ofSize: 17)
+        resultLabel.textAlignment = .center
+        containerView.addSubview(resultLabel)
+        activateResultLabelConstraints(view: resultLabel, anchorView: textField)
+        
         submitButton = UIButton(frame: CGRect.zero)
         submitButton.backgroundColor = UIColor(displayP3Red: 0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
         submitButton.setTitle("Submit", for: .normal)
+        submitButton.layer.cornerRadius = 5
         submitButton.addTarget(self, action: #selector(submitButtonDidPressed), for: .touchUpInside)
         containerView.addSubview(submitButton)
-        activateSubmitButtonConstraints(view: submitButton, anchorView: textField)
+        activateSubmitButtonConstraints(view: submitButton, anchorView: resultLabel)
         
         vowelConsonantView.addSubview(containerView)
         activateContainerConstraints(view: containerView)
@@ -66,10 +74,18 @@ private extension PrivateVowelConsonantViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
-            view.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
-            view.topAnchor.constraint(equalTo: superview.topAnchor),
-            view.widthAnchor.constraint(equalToConstant: 250),
-            view.centerYAnchor.constraint(equalTo: superview.centerYAnchor)
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
+            view.topAnchor.constraint(equalTo: superview.topAnchor)
+            ])
+    }
+    
+    func activateResultLabelConstraints(view: UIView, anchorView: UIView) {
+        guard let superview = view.superview else { return }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 20),
+            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
             ])
     }
     
@@ -77,10 +93,10 @@ private extension PrivateVowelConsonantViewController {
         guard let superview = view.superview else { return }
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
-            view.topAnchor.constraint(equalTo: superview.topAnchor),
+            view.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
             view.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
-            view.centerYAnchor.constraint(equalTo: superview.centerYAnchor)
+            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 20),
+            view.widthAnchor.constraint(equalToConstant: 100)
             ])
     }
     

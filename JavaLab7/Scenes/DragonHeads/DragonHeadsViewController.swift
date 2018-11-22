@@ -52,6 +52,7 @@ class DragonHeadsViewController: UIViewController, DragonHeadsView {
         submitButton = UIButton(frame: CGRect.zero)
         submitButton.backgroundColor = UIColor(displayP3Red: 0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
         submitButton.setTitle("Submit", for: .normal)
+        submitButton.layer.cornerRadius = 5
         submitButton.addTarget(self, action: #selector(submitButtonDidPressed), for: .touchUpInside)
         containerView.addSubview(submitButton)
         activateSubmitButtonConstraints(view: submitButton, anchorView: resultLabel)
@@ -109,7 +110,8 @@ private extension PrivateDragonHeadsViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 20),
-            view.centerXAnchor.constraint(equalTo: superview.centerXAnchor)
+            view.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
+            view.widthAnchor.constraint(equalToConstant: 100)
             ])
     }
     

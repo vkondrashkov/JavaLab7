@@ -33,6 +33,7 @@ class MoodSensorViewController: UIViewController, MoodSensorView {
         generateButton = UIButton(frame: CGRect.zero)
         generateButton.backgroundColor = UIColor(displayP3Red: 0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
         generateButton.setTitle("Submit", for: .normal)
+        generateButton.layer.cornerRadius = 5
         generateButton.addTarget(self, action: #selector(generateButtonDidPressed), for: .touchUpInside)
         containerView.addSubview(generateButton)
         activateGenerateButtonConstraints(view: generateButton, anchorView: moodLabel)
@@ -84,7 +85,8 @@ private extension PrivateMoodSensorViewController {
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 50),
             view.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
-            view.bottomAnchor.constraint(equalTo: superview.bottomAnchor)
+            view.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
+            view.widthAnchor.constraint(equalToConstant: 100)
             ])
     }
     

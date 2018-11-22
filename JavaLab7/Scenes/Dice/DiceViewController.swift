@@ -51,6 +51,7 @@ final class DiceViewController: UIViewController, DiceView {
         throwButton = UIButton(frame: CGRect.zero)
         throwButton.backgroundColor = UIColor(displayP3Red: 0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
         throwButton.setTitle("Submit", for: .normal)
+        throwButton.layer.cornerRadius = 5
         throwButton.addTarget(self, action: #selector(throwButtonDidPressed), for: .touchUpInside)
         containerView.addSubview(throwButton)
         activateThrowButtonConstraints(view: throwButton, anchorView: scoreView)
@@ -117,7 +118,8 @@ private extension PrivateDiceViewController {
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 100),
             view.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
-            view.centerXAnchor.constraint(equalTo: superview.centerXAnchor)
+            view.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
+            view.widthAnchor.constraint(equalToConstant: 100)
             ])
     }
     
