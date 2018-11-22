@@ -47,30 +47,14 @@ final class TabCoordinator: Coordinator {
         diceViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1) // Change
         let moodSensorController = moodSensorCoordinator.rootViewController
         moodSensorController.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2) // Change
-        /*
-         let diceViewController = diceCoordinator.rootViewController
-         //
-         
-         let moodSensorViewController = moodSensorCoordinator.rootViewController
-         //
-         
-         let theGreatestViewController = theGreatestCoordinator.rootViewController
-         //
-         
-         let dragonHeadsViewController = dragonHeadsCoordinator.rootViewController
-         //
-         */
+        let theGreatestViewController = theGreatestCoordinator.rootViewController
+        theGreatestViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 3) // Change
         
         controllers.append(vowelConsonantViewController)
         controllers.append(diceViewController)
         controllers.append(moodSensorController)
-        /*
-         controllers.append(diceViewController)
-         controllers.append(moodSensorViewController)
-         controllers.append(theGreatestViewController)
-         controllers.append(dragonHeadsViewController)
-         */
-        
+        controllers.append(theGreatestViewController)
+
         tabController.viewControllers = controllers
         tabController.tabBar.isTranslucent = false
         //tabController.delegate = self

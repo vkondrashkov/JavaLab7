@@ -13,22 +13,194 @@ protocol TheGreatestView: class {
 }
 
 class TheGreatestViewController: UIViewController, TheGreatestView {
-
+    private var theGreatestView = UIView()
+    private var containerView = UIView()
+    private var firstNumberLabel = UILabel()
+    private var secondNumberLabel = UILabel()
+    private var thirdNumberLabel = UILabel()
+    private var firstNumberField = UITextField()
+    private var secondNumberField = UITextField()
+    private var thirdNumberField = UITextField()
+    private var resultLabel = UILabel()
+    private var submitButton = UIButton()
+    
+    override func loadView() {
+        theGreatestView = UIView(frame: CGRect.zero)
+        theGreatestView.backgroundColor = .white
+        
+        containerView = UIView(frame: CGRect.zero)
+        
+        firstNumberLabel.text = "First number:"
+        firstNumberLabel.font = .boldSystemFont(ofSize: 17)
+        containerView.addSubview(firstNumberLabel)
+        activateFirstNumberLabelConstraints(view: firstNumberLabel)
+        
+        firstNumberField = UITextField(frame: CGRect.zero)
+        firstNumberField.placeholder = "Enter first number here..."
+        firstNumberField.font = .boldSystemFont(ofSize: 17)
+        firstNumberField.borderStyle = .roundedRect
+        firstNumberField.autocorrectionType = .no
+        firstNumberField.keyboardType = .default
+        firstNumberField.clearButtonMode = .whileEditing
+        firstNumberField.contentVerticalAlignment = .center
+        //textField.delegate = self
+        containerView.addSubview(firstNumberField)
+        activateFirstNumberFieldConstraints(view: firstNumberField, anchorView: firstNumberLabel)
+        
+        secondNumberLabel.text = "Second number:"
+        secondNumberLabel.font = .boldSystemFont(ofSize: 17)
+        containerView.addSubview(secondNumberLabel)
+        activateSecondNumberLabelConstraints(view: secondNumberLabel, anchorView: firstNumberField)
+        
+        secondNumberField = UITextField(frame: CGRect.zero)
+        secondNumberField.placeholder = "Enter second number here..."
+        secondNumberField.font = .boldSystemFont(ofSize: 17)
+        secondNumberField.borderStyle = .roundedRect
+        secondNumberField.autocorrectionType = .no
+        secondNumberField.keyboardType = .default
+        secondNumberField.clearButtonMode = .whileEditing
+        secondNumberField.contentVerticalAlignment = .center
+        //textField.delegate = self
+        containerView.addSubview(secondNumberField)
+        activateSecondNumberFieldConstraints(view: secondNumberField, anchorView: secondNumberLabel)
+        
+        thirdNumberLabel.text = "Third number:"
+        thirdNumberLabel.font = .boldSystemFont(ofSize: 17)
+        containerView.addSubview(thirdNumberLabel)
+        activateThirdNumberLabelConstraints(view: thirdNumberLabel, anchorView: secondNumberField)
+        
+        thirdNumberField = UITextField(frame: CGRect.zero)
+        thirdNumberField.placeholder = "Enter third number here..."
+        thirdNumberField.font = .boldSystemFont(ofSize: 17)
+        thirdNumberField.borderStyle = .roundedRect
+        thirdNumberField.autocorrectionType = .no
+        thirdNumberField.keyboardType = .default
+        thirdNumberField.clearButtonMode = .whileEditing
+        thirdNumberField.contentVerticalAlignment = .center
+        //textField.delegate = self
+        containerView.addSubview(thirdNumberField)
+        activateThirdNumberFieldConstraints(view: thirdNumberField, anchorView: thirdNumberLabel)
+        
+        resultLabel.text = "Result: --"
+        resultLabel.font = .boldSystemFont(ofSize: 17)
+        resultLabel.textAlignment = .center
+        containerView.addSubview(resultLabel)
+        activateResultLabelConstraints(view: resultLabel, anchorView: thirdNumberField)
+        
+        submitButton = UIButton(frame: CGRect.zero)
+        submitButton.backgroundColor = .green
+        submitButton.setTitle("Submit", for: .normal)
+        submitButton.addTarget(self, action: #selector(submitButtonDidPressed), for: .touchUpInside)
+        containerView.addSubview(submitButton)
+        activateSubmitButtonConstraints(view: submitButton, anchorView: resultLabel)
+        
+        theGreatestView.addSubview(containerView)
+        activateContainerViewConstraints(view: containerView)
+        
+        view = theGreatestView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func submitButtonDidPressed(sender: UIButton) {
+        
     }
-    */
+}
 
+private typealias PrivateTheGreatestViewController = TheGreatestViewController
+private extension PrivateTheGreatestViewController {
+    func activateFirstNumberLabelConstraints(view: UIView) {
+        guard let superview = view.superview else { return }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: superview.topAnchor),
+            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
+            ])
+    }
+    
+    func activateFirstNumberFieldConstraints(view: UIView, anchorView: UIView) {
+        guard let superview = view.superview else { return }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 10),
+            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
+            ])
+    }
+    
+    func activateSecondNumberLabelConstraints(view: UIView, anchorView: UIView) {
+        guard let superview = view.superview else { return }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 20),
+            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
+            ])
+    }
+    
+    func activateSecondNumberFieldConstraints(view: UIView, anchorView: UIView) {
+        guard let superview = view.superview else { return }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 10),
+            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
+            ])
+    }
+    
+    func activateThirdNumberLabelConstraints(view: UIView, anchorView: UIView) {
+        guard let superview = view.superview else { return }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 20),
+            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
+            ])
+    }
+    
+    func activateThirdNumberFieldConstraints(view: UIView, anchorView: UIView) {
+        guard let superview = view.superview else { return }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 10),
+            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
+            ])
+    }
+    
+    func activateResultLabelConstraints(view: UIView, anchorView: UIView) {
+        guard let superview = view.superview else { return }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 20),
+            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: superview.bottomAnchor)
+            ])
+    }
+    
+    func activateSubmitButtonConstraints(view: UIView, anchorView: UIView) {
+        guard let superview = view.superview else { return }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 20),
+            view.centerXAnchor.constraint(equalTo: superview.centerXAnchor)
+            ])
+    }
+    
+    func activateContainerViewConstraints(view: UIView) {
+        guard let superview = view.superview else { return }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.leadingAnchor.constraint(greaterThanOrEqualTo: superview.leadingAnchor, constant: 20),
+            view.trailingAnchor.constraint(greaterThanOrEqualTo: superview.trailingAnchor, constant: -20),
+            view.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
+            view.centerYAnchor.constraint(equalTo: superview.centerYAnchor)
+            ])
+    }
 }
