@@ -88,7 +88,7 @@ class TheGreatestViewController: UIViewController, TheGreatestView {
         activateResultLabelConstraints(view: resultLabel, anchorView: thirdNumberField)
         
         submitButton = UIButton(frame: CGRect.zero)
-        submitButton.backgroundColor = .green
+        submitButton.backgroundColor = UIColor(displayP3Red: 0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
         submitButton.setTitle("Submit", for: .normal)
         submitButton.addTarget(self, action: #selector(submitButtonDidPressed), for: .touchUpInside)
         containerView.addSubview(submitButton)

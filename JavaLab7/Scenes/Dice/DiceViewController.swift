@@ -49,7 +49,7 @@ final class DiceViewController: UIViewController, DiceView {
         activateScoreViewConstraints(view: scoreView)
         
         throwButton = UIButton(frame: CGRect.zero)
-        throwButton.backgroundColor = .green
+        throwButton.backgroundColor = UIColor(displayP3Red: 0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
         throwButton.setTitle("Submit", for: .normal)
         throwButton.addTarget(self, action: #selector(throwButtonDidPressed), for: .touchUpInside)
         containerView.addSubview(throwButton)

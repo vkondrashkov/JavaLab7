@@ -31,7 +31,7 @@ class MoodSensorViewController: UIViewController, MoodSensorView {
         activateMoodLabelConstraints(view: moodLabel)
         
         generateButton = UIButton(frame: CGRect.zero)
-        generateButton.backgroundColor = .green
+        generateButton.backgroundColor = UIColor(displayP3Red: 0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
         generateButton.setTitle("Submit", for: .normal)
         generateButton.addTarget(self, action: #selector(generateButtonDidPressed), for: .touchUpInside)
         containerView.addSubview(generateButton)

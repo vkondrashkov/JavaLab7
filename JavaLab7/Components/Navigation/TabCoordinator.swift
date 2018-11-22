@@ -42,18 +42,40 @@ final class TabCoordinator: Coordinator {
     func start() {
         var controllers: [UIViewController] = []
         let vowelConsonantViewController = vowelConsonantCoordinator.rootViewController
-        vowelConsonantViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 0) // Change
+        let vowelInactiveTabBarImage = UIImage(named: "vowels-inactive")
+        let vowelActiveTabBarImage = UIImage(named: "vowels")
+        let vowelConsonantTabBarItem = UITabBarItem(title: "Vowels", image: vowelInactiveTabBarImage, selectedImage: vowelActiveTabBarImage)
+        vowelConsonantViewController.tabBarItem = vowelConsonantTabBarItem
+        
         let diceViewController = diceCoordinator.rootViewController
-        diceViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1) // Change
+        let diceInactiveTabBarImage = UIImage(named: "dice-inactive")
+        let diceActiveTabBarImage = UIImage(named: "dice")
+        let diceTabBarItem = UITabBarItem(title: "Dice", image: diceInactiveTabBarImage, selectedImage: diceActiveTabBarImage)
+        diceViewController.tabBarItem = diceTabBarItem
+        
         let moodSensorController = moodSensorCoordinator.rootViewController
-        moodSensorController.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2) // Change
+        let moodSensorInactiveTabBarImage = UIImage(named: "mood-inactive")
+        let moodSensorActiveTabBarImage = UIImage(named: "mood")
+        let moodSensorTabBarItem = UITabBarItem(title: "Mood", image: moodSensorInactiveTabBarImage, selectedImage: moodSensorActiveTabBarImage)
+        moodSensorController.tabBarItem = moodSensorTabBarItem
+        
         let theGreatestViewController = theGreatestCoordinator.rootViewController
-        theGreatestViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 3) // Change
+        let theGreatestInactiveTabBarImage = UIImage(named: "greatest-inactive")
+        let theGreatestActiveTabBarImage = UIImage(named: "greatest")
+        let theGreatestTabBarItem = UITabBarItem(title: "Greatest", image: theGreatestInactiveTabBarImage, selectedImage: theGreatestActiveTabBarImage)
+        theGreatestViewController.tabBarItem = theGreatestTabBarItem
+        
+        let dragonHeadsController = dragonHeadsCoordinator.rootViewController
+        let dragonHeadsInactiveTabBarImage = UIImage(named: "dragon-inactive")
+        let dragonHeadsActiveTabBarImage = UIImage(named: "dragon")
+        let dragonHeadsTabBarItem = UITabBarItem(title: "Dragon", image: dragonHeadsInactiveTabBarImage, selectedImage: dragonHeadsActiveTabBarImage)
+        dragonHeadsController.tabBarItem = dragonHeadsTabBarItem
         
         controllers.append(vowelConsonantViewController)
         controllers.append(diceViewController)
         controllers.append(moodSensorController)
         controllers.append(theGreatestViewController)
+        controllers.append(dragonHeadsController)
 
         tabController.viewControllers = controllers
         tabController.tabBar.isTranslucent = false
