@@ -8,3 +8,23 @@
 
 import Foundation
 
+protocol DicePresenter {
+    func viewDidLoad()
+    func throwButtonDidPressed()
+}
+
+class DicePresenterImplementation: DicePresenter {
+    private weak var view: DiceView!
+    
+    init(view: DiceView) {
+        self.view = view
+    }
+    
+    func viewDidLoad() {
+        
+    }
+    
+    func throwButtonDidPressed() {
+        
+    }
+}

@@ -46,8 +46,7 @@ class VowelConsonantViewController: UIViewController, VowelConsonantView {
         activateSubmitButtonConstraints(view: submitButton, anchorView: textField)
         
         vowelConsonantView.addSubview(containerView)
-        activateTextViewConstraints(view: containerView)
-        
+        activateContainerConstraints(view: containerView)
         view = vowelConsonantView
     }
 
@@ -85,7 +84,7 @@ private extension PrivateVowelConsonantViewController {
             ])
     }
     
-    func activateTextViewConstraints(view: UIView) {
+    func activateContainerConstraints(view: UIView) {
         guard let superview = view.superview else { return }
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
