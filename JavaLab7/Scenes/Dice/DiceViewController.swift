@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DiceView: class {
-    func throwButtonDidPressed()
+    
 }
 
 final class DiceViewController: UIViewController, DiceView {

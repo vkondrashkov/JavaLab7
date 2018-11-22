@@ -45,6 +45,8 @@ final class TabCoordinator: Coordinator {
         vowelConsonantViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 0) // Change
         let diceViewController = diceCoordinator.rootViewController
         diceViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1) // Change
+        let moodSensorController = moodSensorCoordinator.rootViewController
+        moodSensorController.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2) // Change
         /*
          let diceViewController = diceCoordinator.rootViewController
          //
@@ -61,6 +63,7 @@ final class TabCoordinator: Coordinator {
         
         controllers.append(vowelConsonantViewController)
         controllers.append(diceViewController)
+        controllers.append(moodSensorController)
         /*
          controllers.append(diceViewController)
          controllers.append(moodSensorViewController)

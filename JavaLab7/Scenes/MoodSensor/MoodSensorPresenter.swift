@@ -7,3 +7,24 @@
 //
 
 import Foundation
+
+protocol MoodSensorPresenter {
+    func viewDidLoad()
+    func generateButtonDidPressed()
+}
+
+class MoodSensorPresenterImplementation: MoodSensorPresenter {
+    private weak var view: MoodSensorView!
+    
+    init(view: MoodSensorView) {
+        self.view = view
+    }
+    
+    func viewDidLoad() {
+        
+    }
+    
+    func generateButtonDidPressed() {
+        
+    }
+}
