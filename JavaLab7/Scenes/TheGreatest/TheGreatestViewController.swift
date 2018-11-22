@@ -1,5 +1,5 @@
 //
-//  NavigationViewController.swift
+//  TheGreatestViewController.swift
 //  JavaLab7
 //
 //  Created by Vladislav Kondrashkov on 11/22/18.
@@ -8,10 +8,16 @@
 
 import UIKit
 
-class NavigationViewController: UITabBarController {
+protocol TheGreatestView: class {
     
+}
+
+class TheGreatestViewController: UIViewController, TheGreatestView {
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
     
 
