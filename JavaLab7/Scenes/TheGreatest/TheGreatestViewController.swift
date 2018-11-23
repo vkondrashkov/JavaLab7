@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TheGreatestView: class {
-    
+    func display(result: String)
 }
 
 class TheGreatestViewController: UIViewController, TheGreatestView {
@@ -18,11 +18,13 @@ class TheGreatestViewController: UIViewController, TheGreatestView {
     private var firstNumberLabel = UILabel()
     private var secondNumberLabel = UILabel()
     private var thirdNumberLabel = UILabel()
-    private var firstNumberField = UITextField()
-    private var secondNumberField = UITextField()
-    private var thirdNumberField = UITextField()
+    var firstNumberField = UITextField()
+    var secondNumberField = UITextField()
+    var thirdNumberField = UITextField()
     private var resultLabel = UILabel()
     private var submitButton = UIButton()
+    
+    var presenter: TheGreatestPresenter!
     
     override func loadView() {
         theGreatestView = UIView(frame: CGRect.zero)
@@ -81,7 +83,7 @@ class TheGreatestViewController: UIViewController, TheGreatestView {
         containerView.addSubview(thirdNumberField)
         activateThirdNumberFieldConstraints(view: thirdNumberField, anchorView: thirdNumberLabel)
         
-        resultLabel.text = "Result: --"
+        resultLabel.text = " "
         resultLabel.font = .boldSystemFont(ofSize: 17)
         resultLabel.textAlignment = .center
         containerView.addSubview(resultLabel)
@@ -89,7 +91,7 @@ class TheGreatestViewController: UIViewController, TheGreatestView {
         
         submitButton = UIButton(frame: CGRect.zero)
         submitButton.backgroundColor = UIColor(displayP3Red: 0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
-        submitButton.setTitle("Submit", for: .normal)
+        submitButton.setTitle("Find", for: .normal)
         submitButton.layer.cornerRadius = 5
         submitButton.addTarget(self, action: #selector(submitButtonDidPressed), for: .touchUpInside)
         containerView.addSubview(submitButton)
@@ -103,12 +105,15 @@ class TheGreatestViewController: UIViewController, TheGreatestView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        hideKeyboardWhenTappedAround()
     }
     
     @objc func submitButtonDidPressed(sender: UIButton) {
-        
+        presenter.submitButtonDidPressed()
+    }
+    
+    func display(result: String) {
+        resultLabel.text = result
     }
 }
 
@@ -180,8 +185,7 @@ private extension PrivateTheGreatestViewController {
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 20),
             view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: superview.bottomAnchor)
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
             ])
     }
     
@@ -189,8 +193,9 @@ private extension PrivateTheGreatestViewController {
         guard let superview = view.superview else { return }
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 20),
             view.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
+            view.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
+            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 20),
             view.widthAnchor.constraint(equalToConstant: 100)
             ])
     }

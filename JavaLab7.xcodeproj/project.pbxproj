@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6CFB80621A7E47B0035F860 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CFB80521A7E47B0035F860 /* UIViewController+DismissKeyboard.swift */; };
+		D6CFB80821A7E7580035F860 /* VowelConsonantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CFB80721A7E7580035F860 /* VowelConsonantModel.swift */; };
+		D6CFB80A21A7EAA10035F860 /* DiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CFB80921A7EAA10035F860 /* DiceModel.swift */; };
+		D6CFB80C21A7F18E0035F860 /* MoodSensorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CFB80B21A7F18E0035F860 /* MoodSensorModel.swift */; };
+		D6CFB80E21A7F44D0035F860 /* TheGreatestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CFB80D21A7F44D0035F860 /* TheGreatestModel.swift */; };
+		D6CFB81021A7FA2E0035F860 /* DragonHeadsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CFB80F21A7FA2E0035F860 /* DragonHeadsModel.swift */; };
 		D6D0501C21A6FFA500078A85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0501B21A6FFA500078A85 /* AppDelegate.swift */; };
 		D6D0502321A6FFA900078A85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6D0502221A6FFA900078A85 /* Assets.xcassets */; };
 		D6D0502621A6FFA900078A85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6D0502421A6FFA900078A85 /* LaunchScreen.storyboard */; };
@@ -31,6 +37,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D6CFB80521A7E47B0035F860 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
+		D6CFB80721A7E7580035F860 /* VowelConsonantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VowelConsonantModel.swift; sourceTree = "<group>"; };
+		D6CFB80921A7EAA10035F860 /* DiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceModel.swift; sourceTree = "<group>"; };
+		D6CFB80B21A7F18E0035F860 /* MoodSensorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSensorModel.swift; sourceTree = "<group>"; };
+		D6CFB80D21A7F44D0035F860 /* TheGreatestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGreatestModel.swift; sourceTree = "<group>"; };
+		D6CFB80F21A7FA2E0035F860 /* DragonHeadsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonHeadsModel.swift; sourceTree = "<group>"; };
 		D6D0501821A6FFA500078A85 /* JavaLab7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JavaLab7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6D0501B21A6FFA500078A85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6D0502221A6FFA900078A85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +122,11 @@
 		D6D0502E21A6FFDF00078A85 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				D6CFB80721A7E7580035F860 /* VowelConsonantModel.swift */,
+				D6CFB80921A7EAA10035F860 /* DiceModel.swift */,
+				D6CFB80B21A7F18E0035F860 /* MoodSensorModel.swift */,
+				D6CFB80D21A7F44D0035F860 /* TheGreatestModel.swift */,
+				D6CFB80F21A7FA2E0035F860 /* DragonHeadsModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -129,6 +146,7 @@
 		D6D0503021A6FFF300078A85 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D6CFB80521A7E47B0035F860 /* UIViewController+DismissKeyboard.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -275,11 +293,16 @@
 				D6D0504921A70AE100078A85 /* DragonHeadsViewController.swift in Sources */,
 				D6D0506121A70DC500078A85 /* TabCoordinator.swift in Sources */,
 				D6D0505921A70B5100078A85 /* MoodSensorCoordinator.swift in Sources */,
+				D6CFB80C21A7F18E0035F860 /* MoodSensorModel.swift in Sources */,
 				D6D0504F21A70B0E00078A85 /* MoodSensorPresenter.swift in Sources */,
 				D6D0505521A70B3A00078A85 /* VowelConsonantCoordinator.swift in Sources */,
 				D6D0504321A70AB900078A85 /* DiceViewController.swift in Sources */,
+				D6CFB81021A7FA2E0035F860 /* DragonHeadsModel.swift in Sources */,
+				D6CFB80A21A7EAA10035F860 /* DiceModel.swift in Sources */,
+				D6CFB80E21A7F44D0035F860 /* TheGreatestModel.swift in Sources */,
 				D6D0504B21A70AF200078A85 /* VowelConsonantPresenter.swift in Sources */,
 				D6D0501C21A6FFA500078A85 /* AppDelegate.swift in Sources */,
+				D6CFB80621A7E47B0035F860 /* UIViewController+DismissKeyboard.swift in Sources */,
 				D6D0504521A70AC400078A85 /* MoodSensorViewController.swift in Sources */,
 				D6D0505B21A70B5F00078A85 /* TheGreatestCoordinator.swift in Sources */,
 				D6D0503921A7024F00078A85 /* AppCoordinator.swift in Sources */,
@@ -289,6 +312,7 @@
 				D6D0505321A70B2A00078A85 /* DragonHeadsPresenter.swift in Sources */,
 				D6D0505721A70B4500078A85 /* DiceCoordinator.swift in Sources */,
 				D6D0506321A70DF300078A85 /* TabViewController.swift in Sources */,
+				D6CFB80821A7E7580035F860 /* VowelConsonantModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

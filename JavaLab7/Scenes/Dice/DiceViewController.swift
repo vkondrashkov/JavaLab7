@@ -9,7 +9,9 @@
 import UIKit
 
 protocol DiceView: class {
-    
+    func display(firstDice: String)
+    func display(secondDice: String)
+    func display(score: String)
 }
 
 final class DiceViewController: UIViewController, DiceView {
@@ -30,17 +32,17 @@ final class DiceViewController: UIViewController, DiceView {
         containerView = UIView(frame: CGRect.zero)
         scoreView = UIView(frame: CGRect.zero)
         
-        firstDiceLabel.text = "--"
+        firstDiceLabel.text = " "
         firstDiceLabel.font = .boldSystemFont(ofSize: 17)
         scoreView.addSubview(firstDiceLabel)
         activateFirstDiceLabelConstraints(view: firstDiceLabel)
         
-        secondDiceLabel.text = "--"
+        secondDiceLabel.text = " "
         secondDiceLabel.font = .boldSystemFont(ofSize: 17)
         scoreView.addSubview(secondDiceLabel)
         activateSecondDiceLabelConstraints(view: secondDiceLabel)
         
-        scoreLabel.text = "Score: --"
+        scoreLabel.text = " "
         scoreLabel.font = .boldSystemFont(ofSize: 17)
         scoreView.addSubview(scoreLabel)
         activateScoreLabelConstraints(view: scoreLabel)
@@ -50,7 +52,7 @@ final class DiceViewController: UIViewController, DiceView {
         
         throwButton = UIButton(frame: CGRect.zero)
         throwButton.backgroundColor = UIColor(displayP3Red: 0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
-        throwButton.setTitle("Submit", for: .normal)
+        throwButton.setTitle("Throw", for: .normal)
         throwButton.layer.cornerRadius = 5
         throwButton.addTarget(self, action: #selector(throwButtonDidPressed), for: .touchUpInside)
         containerView.addSubview(throwButton)
@@ -63,12 +65,23 @@ final class DiceViewController: UIViewController, DiceView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        hideKeyboardWhenTappedAround()
     }
     
     @objc func throwButtonDidPressed() {
         presenter.throwButtonDidPressed()
+    }
+    
+    func display(firstDice: String) {
+        firstDiceLabel.text = firstDice
+    }
+    
+    func display(secondDice: String) {
+        secondDiceLabel.text = secondDice
+    }
+    
+    func display(score: String) {
+        scoreLabel.text = "Score: " + score
     }
 }
 
@@ -79,7 +92,7 @@ private extension PrivateDiceViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: superview.topAnchor),
-            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: 100),
+            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: 125),
             ])
     }
     
@@ -88,7 +101,7 @@ private extension PrivateDiceViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: superview.topAnchor),
-            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -100),
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -125),
             ])
     }
     
@@ -116,7 +129,7 @@ private extension PrivateDiceViewController {
         guard let superview = view.superview else { return }
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 100),
+            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 50),
             view.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
             view.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
             view.widthAnchor.constraint(equalToConstant: 100)

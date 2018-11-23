@@ -17,6 +17,8 @@ final class DragonHeadsCoordinator: Coordinator {
     
     init() {
         view = DragonHeadsViewController()
+        let presenter = DragonHeadsPresenterImplementation(view: view)
+        view.presenter = presenter
     }
     
     func start() {

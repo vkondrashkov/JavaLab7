@@ -9,16 +9,19 @@
 import UIKit
 
 protocol DragonHeadsView: class {
-    
+    func display(result: String)
 }
 
 class DragonHeadsViewController: UIViewController, DragonHeadsView {
     private var dragonHeadsView = UIView()
     private var containerView = UIView()
     private var ageLabel = UILabel()
-    private var ageField = UITextField()
+    var ageField = UITextField()
     private var resultLabel = UILabel()
     private var submitButton = UIButton()
+    private var anotherButton = UIButton()
+    
+    var presenter: DragonHeadsPresenter!
 
     override func loadView() {
         dragonHeadsView = UIView(frame: CGRect.zero)
@@ -43,7 +46,7 @@ class DragonHeadsViewController: UIViewController, DragonHeadsView {
         containerView.addSubview(ageField)
         activateAgeFieldConstraints(view: ageField, anchorView: ageLabel)
         
-        resultLabel.text = "Result: --"
+        resultLabel.text = " "
         resultLabel.font = .boldSystemFont(ofSize: 17)
         resultLabel.textAlignment = .center
         containerView.addSubview(resultLabel)
@@ -51,7 +54,7 @@ class DragonHeadsViewController: UIViewController, DragonHeadsView {
         
         submitButton = UIButton(frame: CGRect.zero)
         submitButton.backgroundColor = UIColor(displayP3Red: 0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
-        submitButton.setTitle("Submit", for: .normal)
+        submitButton.setTitle("Calculate", for: .normal)
         submitButton.layer.cornerRadius = 5
         submitButton.addTarget(self, action: #selector(submitButtonDidPressed), for: .touchUpInside)
         containerView.addSubview(submitButton)
@@ -62,13 +65,18 @@ class DragonHeadsViewController: UIViewController, DragonHeadsView {
         
         view = dragonHeadsView
     }
+
+    @objc func submitButtonDidPressed(sender: UIButton) {
+        presenter.submitButtonDidPressed()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
     }
     
-    @objc func submitButtonDidPressed(sender: UIButton) {
-        
+    func display(result: String) {
+        resultLabel.text = result
     }
 }
 
@@ -100,8 +108,7 @@ private extension PrivateDragonHeadsViewController {
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 20),
             view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: superview.bottomAnchor)
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
             ])
     }
     
@@ -109,8 +116,9 @@ private extension PrivateDragonHeadsViewController {
         guard let superview = view.superview else { return }
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 20),
             view.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
+            view.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
+            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 20),
             view.widthAnchor.constraint(equalToConstant: 100)
             ])
     }

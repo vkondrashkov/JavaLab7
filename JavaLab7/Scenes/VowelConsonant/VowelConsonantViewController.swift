@@ -9,13 +9,14 @@
 import UIKit
 
 protocol VowelConsonantView: class {
-    
+    func display(result: String)
 }
 
 class VowelConsonantViewController: UIViewController, VowelConsonantView {
     private var vowelConsonantView = UIView()
     private var containerView = UIView()
-    private var textField = UITextField()
+    private var characterLabel = UILabel()
+    var textField = UITextField()
     private var resultLabel = UILabel()
     private var submitButton = UIButton()
     
@@ -27,6 +28,11 @@ class VowelConsonantViewController: UIViewController, VowelConsonantView {
         
         containerView = UIView(frame: CGRect.zero)
         
+        characterLabel.text = "Character:"
+        characterLabel.font = .boldSystemFont(ofSize: 17)
+        containerView.addSubview(characterLabel)
+        activateCharacterLabelConstraints(view: characterLabel)
+        
         textField = UITextField(frame: CGRect.zero)
         textField.placeholder = "Enter your character here..."
         textField.font = .boldSystemFont(ofSize: 17)
@@ -37,9 +43,9 @@ class VowelConsonantViewController: UIViewController, VowelConsonantView {
         textField.contentVerticalAlignment = .center
         //textField.delegate = self
         containerView.addSubview(textField)
-        activateTextFieldConstraints(view: textField)
+        activateTextFieldConstraints(view: textField, anchorView: characterLabel)
         
-        resultLabel.text = "Result: --"
+        resultLabel.text = " "
         resultLabel.font = .boldSystemFont(ofSize: 17)
         resultLabel.textAlignment = .center
         containerView.addSubview(resultLabel)
@@ -47,35 +53,49 @@ class VowelConsonantViewController: UIViewController, VowelConsonantView {
         
         submitButton = UIButton(frame: CGRect.zero)
         submitButton.backgroundColor = UIColor(displayP3Red: 0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
-        submitButton.setTitle("Submit", for: .normal)
+        submitButton.setTitle("Check", for: .normal)
         submitButton.layer.cornerRadius = 5
         submitButton.addTarget(self, action: #selector(submitButtonDidPressed), for: .touchUpInside)
         containerView.addSubview(submitButton)
         activateSubmitButtonConstraints(view: submitButton, anchorView: resultLabel)
         
         vowelConsonantView.addSubview(containerView)
-        activateContainerConstraints(view: containerView)
+        activateContainerViewConstraints(view: containerView)
         view = vowelConsonantView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
     }
     
     @objc func submitButtonDidPressed(sender: UIButton) {
         presenter.submitButtonDidPressed()
     }
+    
+    func display(result: String) {
+        resultLabel.text = result
+    }
 }
 
 private typealias PrivateVowelConsonantViewController = VowelConsonantViewController
 private extension PrivateVowelConsonantViewController {
-    func activateTextFieldConstraints(view: UIView) {
+    func activateCharacterLabelConstraints(view: UIView) {
+        guard let superview = view.superview else { return }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: superview.topAnchor),
+            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
+            ])
+    }
+    func activateTextFieldConstraints(view: UIView, anchorView: UIView) {
         guard let superview = view.superview else { return }
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
             view.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
-            view.topAnchor.constraint(equalTo: superview.topAnchor)
+            view.topAnchor.constraint(equalTo: anchorView.bottomAnchor, constant: 10)
             ])
     }
     
@@ -100,7 +120,7 @@ private extension PrivateVowelConsonantViewController {
             ])
     }
     
-    func activateContainerConstraints(view: UIView) {
+    func activateContainerViewConstraints(view: UIView) {
         guard let superview = view.superview else { return }
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

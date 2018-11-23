@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MoodSensorView: class {
-    
+    func display(mood: String)
 }
 
 class MoodSensorViewController: UIViewController, MoodSensorView {
@@ -18,21 +18,23 @@ class MoodSensorViewController: UIViewController, MoodSensorView {
     private var moodLabel = UILabel()
     private var generateButton = UIButton()
     
+    var presenter: MoodSensorPresenter!
+    
     override func loadView() {
         moodSensorView = UIView(frame: CGRect.zero)
         moodSensorView.backgroundColor = .white
         
         containerView = UIView(frame: CGRect.zero)
         
-        moodLabel.text = "--"
-        moodLabel.font = .boldSystemFont(ofSize: 17)
+        moodLabel.text = " "
+        moodLabel.font = .boldSystemFont(ofSize: 50)
         moodLabel.textAlignment = .center
         containerView.addSubview(moodLabel)
         activateMoodLabelConstraints(view: moodLabel)
         
         generateButton = UIButton(frame: CGRect.zero)
         generateButton.backgroundColor = UIColor(displayP3Red: 0, green: 122.0/255.0, blue: 1.0, alpha: 1.0)
-        generateButton.setTitle("Submit", for: .normal)
+        generateButton.setTitle("Press me!", for: .normal)
         generateButton.layer.cornerRadius = 5
         generateButton.addTarget(self, action: #selector(generateButtonDidPressed), for: .touchUpInside)
         containerView.addSubview(generateButton)
@@ -45,26 +47,17 @@ class MoodSensorViewController: UIViewController, MoodSensorView {
     }
     
     @objc func generateButtonDidPressed(sender: UIButton) {
-        
+        presenter.generateButtonDidPressed()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        hideKeyboardWhenTappedAround()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func display(mood: String) {
+        moodLabel.text = mood
     }
-    */
-
 }
 
 private typealias PrivateMoodSensorViewController = MoodSensorViewController

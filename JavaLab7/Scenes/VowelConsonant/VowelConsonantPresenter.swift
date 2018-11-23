@@ -15,9 +15,11 @@ protocol VowelConsonantPresenter {
 
 class VowelConsonantPresenterImplementation: VowelConsonantPresenter {
     private weak var view: VowelConsonantView!
+    private var model: VowelConsonantModel
     
     init(view: VowelConsonantView) {
         self.view = view
+        self.model = VowelConsonantModelImplementation()
     }
     
     func viewDidLoad() {
@@ -25,7 +27,22 @@ class VowelConsonantPresenterImplementation: VowelConsonantPresenter {
     }
     
     func submitButtonDidPressed() {
-        print("Button pressed!")
+        guard let view = view as? VowelConsonantViewController,
+            let text = view.textField.text,
+            text.count == 1 else {
+                self.view.display(result: "Error!")
+                return
+        }
+        let character = String(text.first!)
+        if let character = Int(character) {
+            view.display(result: String(character) + " is number")
+        }
+        else if model.isVowel(character: character) {
+            view.display(result: character + " is vowel")
+        }
+        else {
+            view.display(result: character + " is consonant")
+        }
     }
     
 }

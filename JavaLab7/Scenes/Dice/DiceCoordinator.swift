@@ -17,6 +17,8 @@ final class DiceCoordinator: Coordinator {
     
     init() {
         view = DiceViewController()
+        let presenter = DicePresenterImplementation(view: view)
+        view.presenter = presenter
     }
     
     func start() {

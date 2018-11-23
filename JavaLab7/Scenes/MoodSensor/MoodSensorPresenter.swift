@@ -15,9 +15,11 @@ protocol MoodSensorPresenter {
 
 class MoodSensorPresenterImplementation: MoodSensorPresenter {
     private weak var view: MoodSensorView!
+    private var model: MoodSensorModel
     
     init(view: MoodSensorView) {
         self.view = view
+        self.model = MoodSensorModelImplementation()
     }
     
     func viewDidLoad() {
@@ -25,6 +27,7 @@ class MoodSensorPresenterImplementation: MoodSensorPresenter {
     }
     
     func generateButtonDidPressed() {
-        
+        let mood = model.generateMood()
+        view.display(mood: mood)
     }
 }

@@ -17,6 +17,8 @@ final class TheGreatestCoordinator: Coordinator {
     
     init() {
         view = TheGreatestViewController()
+        let presenter = TheGreatestPresenterImplementation(view: view)
+        view.presenter = presenter
     }
     
     func start() {

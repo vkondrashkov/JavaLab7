@@ -17,6 +17,8 @@ final class MoodSensorCoordinator: Coordinator {
     
     init() {
         view = MoodSensorViewController()
+        let presenter = MoodSensorPresenterImplementation(view: view)
+        view.presenter = presenter
     }
     
     func start() {
