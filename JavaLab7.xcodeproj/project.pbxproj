@@ -7,21 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6CFB80621A7E47B0035F860 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CFB80521A7E47B0035F860 /* UIViewController+DismissKeyboard.swift */; };
+		D6CFB80821A7E7580035F860 /* VowelConsonantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CFB80721A7E7580035F860 /* VowelConsonantModel.swift */; };
+		D6CFB80A21A7EAA10035F860 /* DiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CFB80921A7EAA10035F860 /* DiceModel.swift */; };
+		D6CFB80C21A7F18E0035F860 /* MoodSensorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CFB80B21A7F18E0035F860 /* MoodSensorModel.swift */; };
+		D6CFB80E21A7F44D0035F860 /* TheGreatestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CFB80D21A7F44D0035F860 /* TheGreatestModel.swift */; };
+		D6CFB81021A7FA2E0035F860 /* DragonHeadsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CFB80F21A7FA2E0035F860 /* DragonHeadsModel.swift */; };
 		D6D0501C21A6FFA500078A85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0501B21A6FFA500078A85 /* AppDelegate.swift */; };
 		D6D0502321A6FFA900078A85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6D0502221A6FFA900078A85 /* Assets.xcassets */; };
 		D6D0502621A6FFA900078A85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6D0502421A6FFA900078A85 /* LaunchScreen.storyboard */; };
-		D6D0503221A7020000078A85 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0503121A7020000078A85 /* NavigationViewController.swift */; };
 		D6D0503921A7024F00078A85 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0503821A7024F00078A85 /* AppCoordinator.swift */; };
+		D6D0504121A70AAD00078A85 /* VowelConsonantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0504021A70AAD00078A85 /* VowelConsonantViewController.swift */; };
+		D6D0504321A70AB900078A85 /* DiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0504221A70AB900078A85 /* DiceViewController.swift */; };
+		D6D0504521A70AC400078A85 /* MoodSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0504421A70AC400078A85 /* MoodSensorViewController.swift */; };
+		D6D0504721A70AD000078A85 /* TheGreatestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0504621A70AD000078A85 /* TheGreatestViewController.swift */; };
+		D6D0504921A70AE100078A85 /* DragonHeadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0504821A70AE100078A85 /* DragonHeadsViewController.swift */; };
+		D6D0504B21A70AF200078A85 /* VowelConsonantPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0504A21A70AF200078A85 /* VowelConsonantPresenter.swift */; };
+		D6D0504D21A70B0400078A85 /* DicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0504C21A70B0400078A85 /* DicePresenter.swift */; };
+		D6D0504F21A70B0E00078A85 /* MoodSensorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0504E21A70B0E00078A85 /* MoodSensorPresenter.swift */; };
+		D6D0505121A70B1C00078A85 /* TheGreatestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0505021A70B1C00078A85 /* TheGreatestPresenter.swift */; };
+		D6D0505321A70B2A00078A85 /* DragonHeadsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0505221A70B2A00078A85 /* DragonHeadsPresenter.swift */; };
+		D6D0505521A70B3A00078A85 /* VowelConsonantCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0505421A70B3A00078A85 /* VowelConsonantCoordinator.swift */; };
+		D6D0505721A70B4500078A85 /* DiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0505621A70B4500078A85 /* DiceCoordinator.swift */; };
+		D6D0505921A70B5100078A85 /* MoodSensorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0505821A70B5100078A85 /* MoodSensorCoordinator.swift */; };
+		D6D0505B21A70B5F00078A85 /* TheGreatestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0505A21A70B5F00078A85 /* TheGreatestCoordinator.swift */; };
+		D6D0505D21A70B6900078A85 /* DragonHeadsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0505C21A70B6900078A85 /* DragonHeadsCoordinator.swift */; };
+		D6D0506121A70DC500078A85 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0506021A70DC500078A85 /* TabCoordinator.swift */; };
+		D6D0506321A70DF300078A85 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0506221A70DF300078A85 /* TabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D6CFB80521A7E47B0035F860 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
+		D6CFB80721A7E7580035F860 /* VowelConsonantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VowelConsonantModel.swift; sourceTree = "<group>"; };
+		D6CFB80921A7EAA10035F860 /* DiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceModel.swift; sourceTree = "<group>"; };
+		D6CFB80B21A7F18E0035F860 /* MoodSensorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSensorModel.swift; sourceTree = "<group>"; };
+		D6CFB80D21A7F44D0035F860 /* TheGreatestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGreatestModel.swift; sourceTree = "<group>"; };
+		D6CFB80F21A7FA2E0035F860 /* DragonHeadsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonHeadsModel.swift; sourceTree = "<group>"; };
 		D6D0501821A6FFA500078A85 /* JavaLab7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JavaLab7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6D0501B21A6FFA500078A85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6D0502221A6FFA900078A85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6D0502521A6FFA900078A85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6D0502721A6FFA900078A85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D6D0503121A7020000078A85 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		D6D0503821A7024F00078A85 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D6D0504021A70AAD00078A85 /* VowelConsonantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VowelConsonantViewController.swift; sourceTree = "<group>"; };
+		D6D0504221A70AB900078A85 /* DiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceViewController.swift; sourceTree = "<group>"; };
+		D6D0504421A70AC400078A85 /* MoodSensorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSensorViewController.swift; sourceTree = "<group>"; };
+		D6D0504621A70AD000078A85 /* TheGreatestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGreatestViewController.swift; sourceTree = "<group>"; };
+		D6D0504821A70AE100078A85 /* DragonHeadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonHeadsViewController.swift; sourceTree = "<group>"; };
+		D6D0504A21A70AF200078A85 /* VowelConsonantPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VowelConsonantPresenter.swift; sourceTree = "<group>"; };
+		D6D0504C21A70B0400078A85 /* DicePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicePresenter.swift; sourceTree = "<group>"; };
+		D6D0504E21A70B0E00078A85 /* MoodSensorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSensorPresenter.swift; sourceTree = "<group>"; };
+		D6D0505021A70B1C00078A85 /* TheGreatestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGreatestPresenter.swift; sourceTree = "<group>"; };
+		D6D0505221A70B2A00078A85 /* DragonHeadsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonHeadsPresenter.swift; sourceTree = "<group>"; };
+		D6D0505421A70B3A00078A85 /* VowelConsonantCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VowelConsonantCoordinator.swift; sourceTree = "<group>"; };
+		D6D0505621A70B4500078A85 /* DiceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceCoordinator.swift; sourceTree = "<group>"; };
+		D6D0505821A70B5100078A85 /* MoodSensorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSensorCoordinator.swift; sourceTree = "<group>"; };
+		D6D0505A21A70B5F00078A85 /* TheGreatestCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGreatestCoordinator.swift; sourceTree = "<group>"; };
+		D6D0505C21A70B6900078A85 /* DragonHeadsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonHeadsCoordinator.swift; sourceTree = "<group>"; };
+		D6D0506021A70DC500078A85 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		D6D0506221A70DF300078A85 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +122,11 @@
 		D6D0502E21A6FFDF00078A85 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				D6CFB80721A7E7580035F860 /* VowelConsonantModel.swift */,
+				D6CFB80921A7EAA10035F860 /* DiceModel.swift */,
+				D6CFB80B21A7F18E0035F860 /* MoodSensorModel.swift */,
+				D6CFB80D21A7F44D0035F860 /* TheGreatestModel.swift */,
+				D6CFB80F21A7FA2E0035F860 /* DragonHeadsModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -85,6 +134,11 @@
 		D6D0502F21A6FFE500078A85 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D6D0503F21A70A6300078A85 /* VowelConsonant */,
+				D6D0503E21A70A4100078A85 /* Dice */,
+				D6D0503D21A70A3500078A85 /* MoodSensor */,
+				D6D0503C21A70A2A00078A85 /* TheGreatest */,
+				D6D0503B21A709A700078A85 /* DragonHeads */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -92,6 +146,7 @@
 		D6D0503021A6FFF300078A85 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D6CFB80521A7E47B0035F860 /* UIViewController+DismissKeyboard.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -99,9 +154,68 @@
 		D6D0503A21A7077400078A85 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D6D0503121A7020000078A85 /* NavigationViewController.swift */,
+				D6D0505F21A70DAF00078A85 /* Navigation */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		D6D0503B21A709A700078A85 /* DragonHeads */ = {
+			isa = PBXGroup;
+			children = (
+				D6D0504821A70AE100078A85 /* DragonHeadsViewController.swift */,
+				D6D0505221A70B2A00078A85 /* DragonHeadsPresenter.swift */,
+				D6D0505C21A70B6900078A85 /* DragonHeadsCoordinator.swift */,
+			);
+			path = DragonHeads;
+			sourceTree = "<group>";
+		};
+		D6D0503C21A70A2A00078A85 /* TheGreatest */ = {
+			isa = PBXGroup;
+			children = (
+				D6D0504621A70AD000078A85 /* TheGreatestViewController.swift */,
+				D6D0505021A70B1C00078A85 /* TheGreatestPresenter.swift */,
+				D6D0505A21A70B5F00078A85 /* TheGreatestCoordinator.swift */,
+			);
+			path = TheGreatest;
+			sourceTree = "<group>";
+		};
+		D6D0503D21A70A3500078A85 /* MoodSensor */ = {
+			isa = PBXGroup;
+			children = (
+				D6D0504421A70AC400078A85 /* MoodSensorViewController.swift */,
+				D6D0504E21A70B0E00078A85 /* MoodSensorPresenter.swift */,
+				D6D0505821A70B5100078A85 /* MoodSensorCoordinator.swift */,
+			);
+			path = MoodSensor;
+			sourceTree = "<group>";
+		};
+		D6D0503E21A70A4100078A85 /* Dice */ = {
+			isa = PBXGroup;
+			children = (
+				D6D0504221A70AB900078A85 /* DiceViewController.swift */,
+				D6D0504C21A70B0400078A85 /* DicePresenter.swift */,
+				D6D0505621A70B4500078A85 /* DiceCoordinator.swift */,
+			);
+			path = Dice;
+			sourceTree = "<group>";
+		};
+		D6D0503F21A70A6300078A85 /* VowelConsonant */ = {
+			isa = PBXGroup;
+			children = (
+				D6D0504021A70AAD00078A85 /* VowelConsonantViewController.swift */,
+				D6D0504A21A70AF200078A85 /* VowelConsonantPresenter.swift */,
+				D6D0505421A70B3A00078A85 /* VowelConsonantCoordinator.swift */,
+			);
+			path = VowelConsonant;
+			sourceTree = "<group>";
+		};
+		D6D0505F21A70DAF00078A85 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				D6D0506021A70DC500078A85 /* TabCoordinator.swift */,
+				D6D0506221A70DF300078A85 /* TabViewController.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,9 +288,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6D0504121A70AAD00078A85 /* VowelConsonantViewController.swift in Sources */,
+				D6D0504D21A70B0400078A85 /* DicePresenter.swift in Sources */,
+				D6D0504921A70AE100078A85 /* DragonHeadsViewController.swift in Sources */,
+				D6D0506121A70DC500078A85 /* TabCoordinator.swift in Sources */,
+				D6D0505921A70B5100078A85 /* MoodSensorCoordinator.swift in Sources */,
+				D6CFB80C21A7F18E0035F860 /* MoodSensorModel.swift in Sources */,
+				D6D0504F21A70B0E00078A85 /* MoodSensorPresenter.swift in Sources */,
+				D6D0505521A70B3A00078A85 /* VowelConsonantCoordinator.swift in Sources */,
+				D6D0504321A70AB900078A85 /* DiceViewController.swift in Sources */,
+				D6CFB81021A7FA2E0035F860 /* DragonHeadsModel.swift in Sources */,
+				D6CFB80A21A7EAA10035F860 /* DiceModel.swift in Sources */,
+				D6CFB80E21A7F44D0035F860 /* TheGreatestModel.swift in Sources */,
+				D6D0504B21A70AF200078A85 /* VowelConsonantPresenter.swift in Sources */,
 				D6D0501C21A6FFA500078A85 /* AppDelegate.swift in Sources */,
+				D6CFB80621A7E47B0035F860 /* UIViewController+DismissKeyboard.swift in Sources */,
+				D6D0504521A70AC400078A85 /* MoodSensorViewController.swift in Sources */,
+				D6D0505B21A70B5F00078A85 /* TheGreatestCoordinator.swift in Sources */,
 				D6D0503921A7024F00078A85 /* AppCoordinator.swift in Sources */,
-				D6D0503221A7020000078A85 /* NavigationViewController.swift in Sources */,
+				D6D0505121A70B1C00078A85 /* TheGreatestPresenter.swift in Sources */,
+				D6D0505D21A70B6900078A85 /* DragonHeadsCoordinator.swift in Sources */,
+				D6D0504721A70AD000078A85 /* TheGreatestViewController.swift in Sources */,
+				D6D0505321A70B2A00078A85 /* DragonHeadsPresenter.swift in Sources */,
+				D6D0505721A70B4500078A85 /* DiceCoordinator.swift in Sources */,
+				D6D0506321A70DF300078A85 /* TabViewController.swift in Sources */,
+				D6CFB80821A7E7580035F860 /* VowelConsonantModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

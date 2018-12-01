@@ -1,5 +1,5 @@
 //
-//  NavigationViewController.swift
+//  TabViewController.swift
 //  JavaLab7
 //
 //  Created by Vladislav Kondrashkov on 11/22/18.
@@ -8,10 +8,11 @@
 
 import UIKit
 
-class NavigationViewController: UITabBarController {
-    
+class TabViewController: UITabBarController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
     }
     
 
